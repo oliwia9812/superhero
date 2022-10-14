@@ -13,16 +13,18 @@ SuperHeroModel _$SuperHeroModelFromJson(Map<String, dynamic> json) =>
       slug: json['slug'] as String?,
       appearance: json['appearance'] == null
           ? null
-          : Appearance.fromJson(json['appearance'] as Map<String, dynamic>),
+          : AppearanceModel.fromJson(
+              json['appearance'] as Map<String, dynamic>),
       biography: json['biography'] == null
           ? null
-          : Biography.fromJson(json['biography'] as Map<String, dynamic>),
+          : BiographyModel.fromJson(json['biography'] as Map<String, dynamic>),
       images: json['images'] == null
           ? null
-          : Images.fromJson(json['images'] as Map<String, dynamic>),
+          : ImagesModel.fromJson(json['images'] as Map<String, dynamic>),
       powerstats: json['powerstats'] == null
           ? null
-          : Powerstats.fromJson(json['powerstats'] as Map<String, dynamic>),
+          : PowerstatsModel.fromJson(
+              json['powerstats'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SuperHeroModelToJson(SuperHeroModel instance) =>

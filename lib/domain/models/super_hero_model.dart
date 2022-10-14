@@ -1,3 +1,7 @@
+import 'package:super_hero/domain/models/appearance_model.dart';
+import 'package:super_hero/domain/models/biography_model.dart';
+import 'package:super_hero/domain/models/images_model.dart';
+import 'package:super_hero/domain/models/powerstats_model.dart';
 import 'package:super_hero/rest_models/appearance.dart';
 import 'package:super_hero/rest_models/biography.dart';
 import 'package:super_hero/rest_models/images.dart';
@@ -11,10 +15,10 @@ class SuperHeroModel {
   final int? id;
   final String? name;
   final String? slug;
-  final Appearance? appearance;
-  final Biography? biography;
-  final Images? images;
-  final Powerstats? powerstats;
+  final AppearanceModel? appearance;
+  final BiographyModel? biography;
+  final ImagesModel? images;
+  final PowerstatsModel? powerstats;
 
   SuperHeroModel({
     this.id,
