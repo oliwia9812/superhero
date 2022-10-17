@@ -40,6 +40,9 @@ dependencies:
   dio: ^4.0.6
   json_annotation: ^4.7.0
   json_serializable: ^6.5.1
+  dio_logging_interceptor: ^1.0.1
+  flutter_bloc: ^8.1.1
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
