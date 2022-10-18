@@ -23,9 +23,3 @@ class AppearanceModel {
 
   Map<String, dynamic> toJson() => _$AppearanceModelToJson(this);
 }
-
-enum Gender {
-  female,
-  male,
-  unknown,
-}

@@ -1,8 +1,8 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import 'package:super_hero/blocs/favorite_super_hero/favorite_super_hero_bloc.dart';
 import 'package:super_hero/domain/models/super_hero_model.dart';
 import 'package:super_hero/repository/super_hero_repository_impl.dart';
+import 'package:super_hero/rest_models/requests/search_request.dart';
 import 'package:super_hero/rest_models/super_hero.dart';
 import 'package:super_hero/mappers/super_hero_mappers.dart';
 
@@ -16,6 +16,7 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
       : super(SuperHeroLoading()) {
     on<GetSuperHeroList>(_onGetSuperHero);
     on<ToggleFav>(_onToogleFav);
+    on<SearchSuperHeroEvent>(_onSearchSuperHeroEvent);
   }
 
   List<SuperHeroModel> superHeroListModel = [];
@@ -47,5 +48,13 @@ class SuperHeroBloc extends Bloc<SuperHeroEvent, SuperHeroState> {
         superHero.isFav = !superHero.isFav;
       }
     }
+  }
+
+  Future<void> _onSearchSuperHeroEvent(
+      SearchSuperHeroEvent event, Emitter<SuperHeroState> emit) async {
+    SuperHero superHero = await superHeroRepository.searchSuperHero(
+        superHeroName: SearchRequest(hero: event.heroName));
+
+    emit(SuperHeroSearch(superHeroModel: superHero.mapToSuperHeroModel()));
   }
 }

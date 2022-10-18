@@ -1,6 +1,6 @@
 import 'dart:convert';
-
 import 'package:super_hero/repository/super_hero_repository.dart';
+import 'package:super_hero/rest_models/requests/search_request.dart';
 import 'package:super_hero/rest_models/super_hero.dart';
 import 'package:dio/dio.dart';
 
@@ -28,11 +28,17 @@ class SuperHeroRepositoryImpl implements SuperHeroRepository {
   }
 
   @override
-  Future<void>? searchSuperHero({required String? superHeroName}) async {
+  Future<SuperHero> searchSuperHero(
+      {required SearchRequest superHeroName}) async {
     try {
       final Response response =
-          await dio.get("/api/", queryParameters: {"hero": superHeroName});
-      print(response);
+          await dio.get("/api/", queryParameters: {"hero": superHeroName.hero});
+
+      Map<String, dynamic> superHero = jsonDecode(
+        response.data,
+      );
+
+      return SuperHero.fromJson(superHero);
     } catch (e) {
       rethrow;
     }

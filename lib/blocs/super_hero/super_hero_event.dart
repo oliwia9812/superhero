@@ -9,3 +9,9 @@ class ToggleFav extends SuperHeroEvent {
   int id;
   ToggleFav({required this.id});
 }
+
+class SearchSuperHeroEvent extends SuperHeroEvent {
+  final String heroName;
+
+  SearchSuperHeroEvent({required this.heroName});
+}

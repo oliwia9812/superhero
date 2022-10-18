@@ -10,5 +10,21 @@ class AppTextStyles {
     );
   }
 
+  static TextStyle title() {
+    return const TextStyle(
+      color: AppColors.primary,
+      fontWeight: FontWeight.w500,
+      fontSize: 24.0,
+    );
+  }
+
+  static TextStyle listTileTitleSmall() {
+    return const TextStyle(
+      color: AppColors.primary,
+      fontWeight: FontWeight.w500,
+      fontSize: 14.0,
+    );
+  }
+
   AppTextStyles._();
 }

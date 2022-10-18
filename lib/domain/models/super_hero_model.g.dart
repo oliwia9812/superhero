@@ -25,6 +25,7 @@ SuperHeroModel _$SuperHeroModelFromJson(Map<String, dynamic> json) =>
           ? null
           : PowerstatsModel.fromJson(
               json['powerstats'] as Map<String, dynamic>),
+      isFav: json['isFav'] as bool? ?? false,
     );
 
 Map<String, dynamic> _$SuperHeroModelToJson(SuperHeroModel instance) =>
@@ -36,4 +37,5 @@ Map<String, dynamic> _$SuperHeroModelToJson(SuperHeroModel instance) =>
       'biography': instance.biography,
       'images': instance.images,
       'powerstats': instance.powerstats,
+      'isFav': instance.isFav,
     };

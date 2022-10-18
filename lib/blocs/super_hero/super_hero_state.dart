@@ -12,3 +12,9 @@ class SuperHeroLoaded extends SuperHeroState {
 }
 
 class SuperHeroError extends SuperHeroState {}
+
+class SuperHeroSearch extends SuperHeroState {
+  final SuperHeroModel superHeroModel;
+
+  SuperHeroSearch({required this.superHeroModel});
+}
