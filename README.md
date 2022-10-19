@@ -1,4 +1,21 @@
-# super_hero
+
+<h1 align="center">SuperHeroApp</h1>
+<h4 align="center">Minimal app to search superhero from API. Built with Dart, Flutter and BLoC</h4>
+
+
+https://user-images.githubusercontent.com/101331206/196626542-59d000b3-3f63-476a-8c2f-7d03e6b98977.mp4
+
+
+## Library:
+  * cupertino_icons
+  * bloc
+  * flutter_bloc
+  * equatable
+  * get_it
+  * dio
+  * json_annotation
+  * json_serializable
+  
 
 A new Flutter project.
 
